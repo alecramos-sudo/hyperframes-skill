@@ -7,7 +7,7 @@ ElevenLabs is the default for both voiceover (TTS) and custom sound effects (SFX
 ### Credentials
 
 ```
-API Key:  sk_c1792a8112a8b090a671d1518b01563742142db146c83b6e
+API Key:  set ELEVENLABS_API_KEY in your environment (never paste the key here)
 Header:   xi-api-key: <key>
 ```
 
@@ -23,7 +23,7 @@ Header:   xi-api-key: <key>
 
 ```bash
 curl -X POST "https://api.elevenlabs.io/v1/text-to-speech/{voice_id}?output_format=mp3_44100_128" \
-  -H "xi-api-key: sk_c1792a8112a8b090a671d1518b01563742142db146c83b6e" \
+  -H "xi-api-key: $ELEVENLABS_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
     "text": "Your script here.",
@@ -60,7 +60,7 @@ Custom SFX via the sound generation endpoint — no pre-recorded libraries neede
 
 ```bash
 curl -X POST "https://api.elevenlabs.io/v1/sound-generation" \
-  -H "xi-api-key: sk_c1792a8112a8b090a671d1518b01563742142db146c83b6e" \
+  -H "xi-api-key: $ELEVENLABS_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
     "text": "Describe the sound in plain English",
